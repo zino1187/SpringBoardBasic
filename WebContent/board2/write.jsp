@@ -1,8 +1,4 @@
-<%@page import="com.study.board.model.Board"%>
 <%@ page contentType="text/html;charset=utf-8"%>
-<%
-	Board board=(Board)request.getAttribute("board");
-%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -51,15 +47,15 @@ img{border:0px}
           </tr>
           <tr id="writer">
             <td height="25" align="center">작성자</td>
-            <td><input type="text" name="textfield" value="<%=board.getWriter()%>"></td>
+            <td><input type="text" name="textfield"></td>
           </tr>
           <tr id="title">
             <td height="25" align="center">제목</td>
-            <td><input type="text" name="textfield2" value="<%=board.getTitle()%>"></td>
+            <td><input type="text" name="textfield2"></td>
           </tr>
           <tr id="content">
             <td align="center">내용</td>
-            <td><textarea name="content" style=""><%=board.getContent() %></textarea></td>
+            <td><textarea name="content" style=""></textarea></td>
           </tr>
           <tr>
             <td>&nbsp;</td>
@@ -69,8 +65,8 @@ img{border:0px}
 	</tr>
   <tr>
     <td height="30" align="right" style="padding-right:2px;">
-	<img src="/board/images/write_btin.gif" width="61" height="20">
-	<img src="/board/images/delete_btn.gif" width="61" height="20"> <a href="list.html"><img src="/board/images/list_btn.gif" width="61" height="20" border="0"></a> </td>
+	<img src="/board/images/write_btin.gif" width="61" height="20"> 
+	<a href="list.jsp"><img src="/board/images/list_btn.gif" width="61" height="20"></a>	</td>
   </tr>
   <tr>
     <td height="1" bgcolor="#CCCCCC"></td>

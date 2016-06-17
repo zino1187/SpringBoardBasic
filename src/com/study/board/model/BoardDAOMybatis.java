@@ -16,6 +16,7 @@ public class BoardDAOMybatis {
 		
 	}
 	
+	
 	//한건 등록 메서드 
 	public void insert(Board board){
 		SqlSession session = mybatisConfig.getSession();
@@ -24,8 +25,21 @@ public class BoardDAOMybatis {
 		session.commit();
 	}
 	
+	//한건 가져오기 
+	public Board select(int board_id){
+		SqlSession session = mybatisConfig.getSession();
+		Board board=session.selectOne("Board.select", board_id);
+		return board;
+	}
 	
 }
+
+
+
+
+
+
+
 
 
 

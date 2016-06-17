@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.study.board.model.Board;
 import com.study.board.model.BoardDAOMybatis;
@@ -42,6 +43,18 @@ public class BoardController {
 		boardDAOMybatis.insert(board);
 		
 		return "redirect:/board/list.do";
+	}
+	
+	//상세보기 요청 처리
+	@RequestMapping("/board/detail.do")
+	public ModelAndView select(String board_id){
+		//String sql="select * from board where board_id="+board_id;
+		//System.out.println(sql);
+		Board board=boardDAOMybatis.select(Integer.parseInt(board_id));
+		ModelAndView mav = new ModelAndView(); //데이터 저장용도 + 뷰페이지 정보
+		mav.setViewName("board/detail");//뷰페이지 매핑
+		mav.addObject("board", board); //저장
+		return mav;
 	}
 	
 	

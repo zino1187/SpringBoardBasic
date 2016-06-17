@@ -15,7 +15,10 @@
 		insert into board(board_id, title,writer,content) 
 		values(seq_board.nextval, #{title}, #{writer}, #{content})
 	</insert>
-				
+
+	<select id="select" parameterType="int" resultType="Board">
+		select * from board where board_id=#{board_id}
+	</select>				
 </mapper>
 
 
